@@ -18,21 +18,23 @@ In particular, there is functionality to cluster papers based on latent Dirichle
 
 1. Save the HTML from where the accepted papers are displayed. For CVPR, this year, that would be `http://openaccess.thecvf.com/CVPR2019.py`.
 
-2. Install ImageMagick, which can be done using `sudo apt-get install imagemagick` or using another supported method such as `brew install imagemagick`.
+2. Run `download_pdfs.py` to download all the PDFs inside the content/ folder. (Note: You will need to point the script from `cvpr2020oar.html` to where ever you saved the HTML files from part 1.)
 
-3. Run `pdftowordcloud.py` to generate top words for each paper. The output is saved in topwords.p.
+3. Run `getabstracts.py` to generate the abstract files inside the abstracts/ folder.
 
-4. Run `pdftothumbs.py` to generate tiny thumbnails for all papers. The outputs are saved in thumbs/ folder.
+4. Install ImageMagick, which can be done using `sudo apt-get install imagemagick` or using another supported method such as `brew install imagemagick`.
 
-5. Run `scrape.py` to generate each paperid, title, authors list by scraping the cvpr2019oar.html page.
+5. Run `pdftowordcloud.py` to generate top words for each paper. The output is saved in topwords.p.
 
-6. Run `makecorpus.py` to create allpapers.txt file that has all papers (one per row).
+6. Run `pdftothumbs.py` to generate tiny thumbnails for all papers. The outputs are saved in thumbs/ folder.
 
-7. Run `python lda.py -f allpapers.txt -k 7 --alpha=0.5 --beta=0.5 -i 100` . This will generate a pickle file called `ldaphi.p` that contains the LDA word distribution matrix. Thanks to this [nice LDA code](https://github.com/shuyo/iir/blob/master/lda/lda.py) by [@shuyo](https://github.com/shuyo)! It requires nltk library and numpy. In this example we are using 7 categories. You would need to change the `cvprnice_template.html` file a bit if you wanted to try different number of categories.
+7. Run `scrape.py` to generate each paperid, title, authors list by scraping the cvpr2020oar.html page.
 
-8. Generate the abstract files inside abstracts/ folder using `getabstracts.py`.
+8. Run `makecorpus.py` to create allpapers.txt file that has all papers (one per row).
 
-9. Finally, run `generatenicelda.py` to create the `index.html` page.
+9. Run `python lda.py -f allpapers.txt -k 7 --alpha=0.5 --beta=0.5 -i 100` . This will generate a pickle file called `ldaphi.p` that contains the LDA word distribution matrix. Thanks to this [nice LDA code](https://github.com/shuyo/iir/blob/master/lda/lda.py) by [@shuyo](https://github.com/shuyo)! It requires nltk library and numpy. In this example we are using 7 categories. You would need to change the `cvprnice_template.html` file a bit if you wanted to try different number of categories.
+
+10. Finally, run `generatenicelda.py` to create the `index.html` page.
 
 ### Acknowledgements
 

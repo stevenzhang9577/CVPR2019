@@ -9,8 +9,12 @@ relpath = "content/"
 allFiles = os.listdir(relpath)
 pdfs = [x for x in allFiles if x.endswith(".pdf")]
 
+existing = os.listdir('thumbs/')
+
 for i,f in enumerate(pdfs):
 	paperid = f[:-20]
+	if paperid + '.jpg' in existing:
+		continue
 	fullpath = relpath + f
 
 	print("processing %s, %d/%d" % (paperid[:5], i, len(pdfs)))

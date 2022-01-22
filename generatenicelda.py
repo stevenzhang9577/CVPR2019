@@ -144,7 +144,7 @@ for pid, p in enumerate(paperdict):
 	thumbpath = "thumbs/%s.jpg" % (p, )
 
 	# get links to PDF on CVPR servers
-	pdflink = "http://openaccess.thecvf.com/content_CVPR_2019/papers/%s_CVPR_2019_paper.pdf" % (p, )
+	pdflink = "http://openaccess.thecvf.com/content_CVPR_2020/papers/%s_CVPR_2020_paper.pdf" % (p, )
 
 	s += """
 
@@ -181,7 +181,7 @@ for pid, p in enumerate(paperdict):
 		   pdflink, # link the image to the pdf
 		   thumbpath, # image
 		   pid, # abs display num
-		   link_url(open('abstracts/%s_CVPR_2019_paper.txt' % (p,), 'r').read()), # abstract
+		   link_url(open('abstracts/%s_CVPR_2020_paper.txt' % (p,), 'r').read()), # abstract
 		   pid, # topics display num
 		   tcat, # topics
 		   pid, # bib display num

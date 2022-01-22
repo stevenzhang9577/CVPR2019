@@ -1,7 +1,7 @@
 from urllib.request import urlretrieve
 
 # read the relative path to CVPR2019OAR
-file = open('cvpr2019oar.html', 'r')
+file = open('cvpr2020oar.html', 'r')
 html = file.read()
 
 # go through the html file until it
@@ -10,6 +10,7 @@ while html.find('.pdf') != -1:
 	# find the first .pdf file
 	paper = html[:html.find('.pdf')+4]
 	paper = paper[paper.rfind('"')+1:]
+	print(paper)
 
 	# download the pdf into the content folder
 	urlretrieve(paper, 'content/' + paper[paper.rfind('/')+1:])

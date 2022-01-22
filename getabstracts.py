@@ -12,7 +12,7 @@ paperids = [x[:-4] for x in allFiles if x.endswith(".pdf")]
 # iterate over each paper
 for i, pid in enumerate(paperids):
 	# get the url to the page that contains the abstract
-	url = 'http://openaccess.thecvf.com/content_CVPR_2019/html/' + pid + '.html'
+	url = 'http://openaccess.thecvf.com/content_CVPR_2020/html/' + pid + '.html'
 
 	print("Processing:", pid, i, '/', len(paperids)) # monitor progress
 
