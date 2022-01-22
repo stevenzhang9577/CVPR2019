@@ -1,7 +1,7 @@
 from urllib.request import urlretrieve
 
 # read the relative path to CVPR2019OAR
-file = open('cvpr2020oar.html', 'r')
+file = open('cvpr2020oar.html', 'r', encoding='utf-8')
 html = file.read()
 
 # go through the html file until it
